@@ -79,7 +79,11 @@ choices.forEach(choice => {
     const classToApply =
       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
     console.log(classToApply);
-    getNewQuestion();
+    selectedChoice.parentElement.classList.add(classToApply);
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 1000);
   });
 });
 
