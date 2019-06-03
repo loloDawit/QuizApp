@@ -52,6 +52,7 @@ statGame = () => {
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTION) {
+      localStorage.setItem('mostRecentScore',score);
     // go to the end of page
     return window.location.assign("/end.html");
   }
